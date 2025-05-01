@@ -1,6 +1,7 @@
 package com.tbert31.microservices.product.controller;
 
 import com.tbert31.microservices.product.dto.ProductRequest;
+import com.tbert31.microservices.product.model.Product;
 import com.tbert31.microservices.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -14,7 +15,7 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody ProductRequest productRequest) {
-        productService.createProduct(productRequest);
+    public Product createProduct(@RequestBody ProductRequest productRequest) {
+        return productService.createProduct(productRequest);
     }
 }
