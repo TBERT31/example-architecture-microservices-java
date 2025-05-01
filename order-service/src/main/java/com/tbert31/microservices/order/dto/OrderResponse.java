@@ -1,4 +1,6 @@
 package com.tbert31.microservices.order.dto;
 
-public class OrderResponse {
+import java.math.BigDecimal;
+
+public record OrderResponse(Long id, String orderNumber, String skuCode, BigDecimal price, Integer quantity) {
 }
