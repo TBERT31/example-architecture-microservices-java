@@ -43,4 +43,4 @@ build/
 /docker/tempo/tempo-data/
 
 # Ignore volumes MySQL
-order-service/mysql/
+**/mysql/

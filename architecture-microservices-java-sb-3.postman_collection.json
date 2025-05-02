@@ -70,7 +70,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Iphone 13\",\r\n    \"description\": \"Phone 13, by Apple\",\r\n    \"price\": \"1200\"\r\n}",
+							"raw": "{\r\n    \"skuCode\": \"Product 1\",\r\n    \"price\": 99.99,\r\n    \"quantity\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -87,6 +87,41 @@
 							"path": [
 								"api",
 								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory Service",
+			"item": [
+				{
+					"name": "Get Inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/inventory?skuCode=Product 1&quantity=99",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "skuCode",
+									"value": "Product 1"
+								},
+								{
+									"key": "quantity",
+									"value": "99"
+								}
 							]
 						}
 					},
