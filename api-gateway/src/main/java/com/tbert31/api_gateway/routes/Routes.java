@@ -15,7 +15,7 @@ public class Routes {
     @Bean
     public RouterFunction<ServerResponse> productServiceRoute() {
         return GatewayRouterFunctions.route("product_service")
-                .route(RequestPredicates.path("/api/product"), HandlerFunctions.http())
+                .route(RequestPredicates.path("/api/product"), HandlerFunctions.http("http://localhost:8080"))
                 .build();
     }
 }
