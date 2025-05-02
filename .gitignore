@@ -45,3 +45,4 @@ build/
 # Ignore volumes MySQL
 **/mysql/
 product-service/data/
+api-gateway/volume-data/
