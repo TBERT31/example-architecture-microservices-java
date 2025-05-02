@@ -44,3 +44,4 @@ build/
 
 # Ignore volumes MySQL
 **/mysql/
+product-service/data/
