@@ -51,3 +51,5 @@ api-gateway/volume-data/
 **/node_modules/
 **/dist/
 **/build/
+
+.secrets
