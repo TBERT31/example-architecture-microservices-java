@@ -89,7 +89,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"skuCode\": \"Product 3\",\r\n  \"price\": 109.88,\r\n  \"quantity\": 12,\r\n  \"userDetails\": {\r\n    \"email\": \"thomas.berteau.dev@gmail.com\",\r\n    \"firstName\": \"Thomas\",\r\n    \"lastName\": \"Berteau\"\r\n  }\r\n}",
+							"raw": "{\r\n  \"skuCode\": \"Product 3\",\r\n  \"price\": 109.99,\r\n  \"quantity\": 12,\r\n  \"userDetails\": {\r\n    \"email\": \"thomas.berteau.dev@gmail.com\",\r\n    \"firstName\": \"Thomas\",\r\n    \"lastName\": \"Berteau\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
