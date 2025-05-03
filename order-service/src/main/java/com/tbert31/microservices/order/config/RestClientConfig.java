@@ -1,6 +1,7 @@
 package com.tbert31.microservices.order.config;
 
 import com.tbert31.microservices.order.client.InventoryClient;
+import io.micrometer.observation.ObservationRegistry;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 //import org.springframework.boot.web.client.ClientHttpRequestFactories;
@@ -20,6 +21,7 @@ public class RestClientConfig {
 
     @Value("${inventory.url}")
     private String inventoryServiceUrl;
+    private final ObservationRegistry observationRegistry;
 
     @Bean
     public InventoryClient inventoryClient() {
@@ -29,6 +31,7 @@ public class RestClientConfig {
                     request.getHeaders().set("Content-Type", "application/json");
                     return execution.execute(request, body);
                 })
+                .observationRegistry(observationRegistry)
                 .build();
 
         RestClientAdapter restClientAdapter = RestClientAdapter.create(restClient);
