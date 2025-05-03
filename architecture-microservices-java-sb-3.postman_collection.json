@@ -89,7 +89,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"skuCode\": \"Product 1\",\r\n    \"price\": 99.99,\r\n    \"quantity\": 1\r\n}",
+							"raw": "{\r\n  \"skuCode\": \"Product 3\",\r\n  \"price\": 109.88,\r\n  \"quantity\": 12,\r\n  \"userDetails\": {\r\n    \"email\": \"thomas.berteau.dev@gmail.com\",\r\n    \"firstName\": \"Thomas\",\r\n    \"lastName\": \"Berteau\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -141,7 +141,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/api/inventory?skuCode=Product 1&quantity=99",
+							"raw": "http://localhost:8082/api/inventory?skuCode=Product 1&quantity=100",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -158,7 +158,7 @@
 								},
 								{
 									"key": "quantity",
-									"value": "99"
+									"value": "100"
 								}
 							]
 						}
@@ -350,7 +350,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"skuCode\": \"Product 1\",\r\n    \"price\": 99.99,\r\n    \"quantity\": 1\r\n}",
+							"raw": "{\r\n  \"skuCode\": \"Product 4\",\r\n  \"price\": 89.88,\r\n  \"quantity\": 10,\r\n  \"userDetails\": {\r\n    \"email\": \"user@example.com\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\"\r\n  }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -432,6 +432,61 @@
 									"key": "quantity",
 									"value": "99"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "clientSecret",
+									"value": "4FcMl1OCoE6GKUAifBOqkSrSs6b8A6N1",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "spring-microservices-security-client",
+									"type": "string"
+								},
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:8181/realms/spring-microservices-security-realm/protocol/openid-connect/token",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "string"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"actuator",
+								"health"
 							]
 						}
 					},
