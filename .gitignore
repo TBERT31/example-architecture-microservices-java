@@ -46,3 +46,8 @@ build/
 **/mysql/
 product-service/data/
 api-gateway/volume-data/
+
+# Frontend
+**/node_modules/
+**/dist/
+**/build/
