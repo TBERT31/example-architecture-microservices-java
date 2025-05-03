@@ -8,9 +8,6 @@ import { Product } from "@/types/product";
 import { createProduct } from "@/services/product/product.service";
 
 const schema = z.object({
-    skuCode: z.string()
-      .min(3, "SKU Code must be at least 3 characters long")
-      .nonempty("SKU Code is required"),
     name: z.string()
       .min(3, "Name must be at least 3 characters long")
       .nonempty("Name is required"),
