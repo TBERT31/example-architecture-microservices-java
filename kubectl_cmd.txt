@@ -1,0 +1,64 @@
+Example with mysql, how to generate file
+
+kubectl create deployment mysql --image=mysql:8.3.0 --port=3306 --replicas=1 --dry-run=client -o yaml
+kubectl create service clusterip mysql --tcp=3306:3306 --dry-run=client -o yaml
+kubectl create secret generic mysql-secrets --from-literal=MYSQL_ROOT_PASSWORD=mysql --dry-run=client -o yaml
+(Go to k8s/manifest/infrastructure ->) kubectl apply -f mysql.yaml
+kubectl get all
+kubectl port-forward svc/mysql 3307:3306
+
+Generate manually pv, pvc, secrets, configmap ...
+
+To see locally the db : kubectl port-forward svc/mysql 3307:3306
+
+---
+When all yml have been created in k8s/manifest/infrastructure, you can apply them all at once:
+
+cd k8s/manifest
+kubectl apply -f infrastructure
+kubectl get pods
+
+NAME                               READY   STATUS              RESTARTS   AGE
+broker-546cfbcf95-r47h5            1/1     Running             0          8h
+grafana-5c64495b76-ljzqs           1/1     Running             0          8h
+kafka-ui-54c9986889-mtlkl          1/1     Running             0          8h
+keycloak-79fcb5b974-4t2b9          1/1     Running             0          8h
+keycloak-mysql-f4b4f99f9-7t8gn     1/1     Running             0          8h
+loki-77dc9c4fb9-9c7gt              1/1     Running             0          8h
+mongodb-767b7f5f45-7kstf           1/1     Running             0          8h
+mysql-75c549c97-p8g62              1/1     Running             0          9h
+prometheus-7d9ddcd944-cjnqz        1/1     Running             0          8h
+schema-registry-6db5dd748b-v9nw9   1/1     Running             0          8h
+tempo-5d5467655f-nzr7b             1/1     Running             0          8h
+zookeeper-79f776879d-chbg4         1/1     Running             0          8h
+
+
+Let's if keycloak working : kubectl port-forward svc/keycloak 8080:8080
+---
+cd k8s/manifest
+kubectl apply -f applications
+kubectl get pods
+
+NAME                                   READY   STATUS              RESTARTS   AGE
+api-gateway-cbdbf6d54-lvmxx            1/1     Running             0          20s
+broker-546cfbcf95-r47h5                1/1     Running             0          8h          
+grafana-5c64495b76-ljzqs               1/1     Running             0          8h          
+inventory-service-974f95f56-nvcv6      1/1     Running             0          7h
+kafka-ui-54c9986889-mtlkl              1/1     Running             0          8h          
+keycloak-79fcb5b974-4t2b9              1/1     Running             0          8h          
+keycloak-mysql-f4b4f99f9-7t8gn         1/1     Running             0          8h          
+loki-77dc9c4fb9-9c7gt                  1/1     Running             0          8h          
+mongodb-767b7f5f45-7kstf               1/1     Running             0          8h          
+mysql-75c549c97-p8g62                  1/1     Running             0          9h
+nextjs-frontend-77ddcbd8b5-r47vb       1/1     Running             0          7h
+notification-service-b6c4b6cb8-4w8xp   1/1     Running             0          7h
+order-service-7896bb9d6c-w4jfs         1/1     Running             0          7h
+product-service-58ffd58888-76rww       1/1     Running             0          7h
+prometheus-7d9ddcd944-cjnqz            1/1     Running             0          8h          
+schema-registry-6db5dd748b-v9nw9       1/1     Running             0          8h          
+tempo-5d5467655f-nzr7b                 1/1     Running             0          8h          
+zookeeper-79f776879d-chbg4             1/1     Running             0          8h          
+
+Access to the endpoint here : kubectl port-forward svc/nextjs-frontend 4200:4200
+
+Go to localhost:4200

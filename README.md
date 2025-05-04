@@ -69,7 +69,8 @@ npm run dev
 ```
 ## How to build the backend services
 
-Run the following command to build and package the backend services into a docker container
+Run the following command to build and package the backend services into a docker container.
+(To get a new <your-docker-account-password>, go generate an Access Token in your Docker Hub account and use it as the password.)
 
 ```shell
 mvn spring-boot:build-image -Dmaven.test.skip=true -DdockerUsername=<your-docker-account-username> -DdockerPassword=<your-docker-account-password>

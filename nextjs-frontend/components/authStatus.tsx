@@ -19,7 +19,7 @@ export default function AuthStatus() {
     if (
       status != "loading" &&
       session &&
-      (session as any).error === "RefreshAccessTokenError"
+      session.error === "RefreshAccessTokenError"
     ) {
       signOut({ callbackUrl: "/" });
     }

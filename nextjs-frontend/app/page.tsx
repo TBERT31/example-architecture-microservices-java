@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { getProducts } from "@/services/product/product.service";
 import { orderProduct } from "@/services/order/order.service";
 import { Product } from "@/types/product";
-import { Order } from "@/types/order";
+import { Order, UserDetails } from "@/types/order";
 
 export default function Home() {
   const { data: session } = useSession();
@@ -50,15 +50,15 @@ export default function Home() {
       quantity: Number(quantity),
       userDetails: {
         email: session?.user?.email || "",
-        firstName: (session?.user as any)?.firstName || "",
-        lastName: (session?.user as any)?.lastName || "",
+        firstName: (session?.user as UserDetails)?.firstName || "",
+        lastName: (session?.user as UserDetails)?.lastName || "",
       },
     };
 
     try {
       await orderProduct(order);
       setOrderSuccess(true);
-    } catch (error) {
+    } catch {
       setOrderFailed(true);
     }
   };
