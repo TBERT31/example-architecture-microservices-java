@@ -61,4 +61,8 @@ zookeeper-79f776879d-chbg4             1/1     Running             0          8h
 
 Access to the endpoint here : kubectl port-forward svc/nextjs-frontend 4200:4200
 
+In /etc/hosts (Windows) add the following line:
+127.0.0.1   keycloak.default.svc.cluster.local
+
 Go to localhost:4200
+---
