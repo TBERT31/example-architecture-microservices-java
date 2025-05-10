@@ -2,6 +2,8 @@
 This repository is an example of a microservices architecture using Spring Boot and Next.js. 
 The project is designed to demonstrate the use of various technologies and tools in a microservices environment.
 
+## Screencast demonstrations & explanations
+
 You can see the various demos and explanations of the project as it progresses by visiting the branches in question and clicking on the video links below : 
 - [1-demo-product-service](https://youtu.be/937Yzy4TM2A)
 - [2-demo-order-service](https://youtu.be/XJZZUBXHMpU)
