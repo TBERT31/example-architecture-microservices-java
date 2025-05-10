@@ -100,7 +100,7 @@ Finally, go to the Credential section of client `nextjs-frontend` and copy the c
 
 ![image](https://github.com/user-attachments/assets/b1dc006d-1ed0-4507-b160-3baa821bb61c)
 
-Copy the value to update the environment variable file (.env.local) of the nextjs-frontend.  
+Paste the client-secret in order to update the environment variable file (.env.local) of the nextjs-frontend.  
 
 ### Start the Product Service
 
