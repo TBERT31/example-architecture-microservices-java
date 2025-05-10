@@ -123,10 +123,6 @@ Then click on the green ▶️ icon next to the main method or at the top of the
 product-service is set to run on  : [http://localhost:8080](http://localhost:8080)
 
 You can access the contents of the MongoDB database with the tool [MongoDB Compass](https://www.mongodb.com/fr-fr/products/tools/compass)  
-from this path: `src/main/resources/application.properties`
-
-Check that the connection to the MongoDB database is correct according to the information in the docker-compose.yml file
-
 
 ### Start the Order Service
 
