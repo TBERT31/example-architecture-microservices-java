@@ -225,7 +225,8 @@ spring.mail.username=**********
 spring.mail.password=**********
 ```
 User Interface on mailtrap.io, where you can find your credentials informations : 
-![2025-05-10 13_35_07-Mailtrap - Email Delivery Platform](https://github.com/user-attachments/assets/7268385b-c7d9-4791-832f-4afe0912d43d)
+![2025-05-10 13_35_07-Mailtrap - Email Delivery Platform](https://github.com/user-attachments/assets/ef0ff687-960d-4eb3-93b6-a48a9c87e60b)
+
 
 
 ### Access the Grafana Dashboards
