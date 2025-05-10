@@ -120,27 +120,6 @@ Then click on the green ▶️ icon next to the main method or at the top of the
 ```shell
 ./mvnw spring-boot:run
 ```
-
-product-service is set to run on  : [http://localhost:8080](http://localhost:8080)
-
-### Start the Product Service
-
-To start the Product-Service
-
-```shell
-cd product-service
-docker-compose up -d
-```
-
-Then, launch the Spring Boot application:
-- With IntelliJ IDEA or another IDE:
-Open the ProductServiceApplication.java file (located in src/main/java/com/tbert31/microservices/product)
-Then click on the green ▶️ icon next to the main method or at the top of the file to run the application.
-
-- Or via command line:
-```shell
-./mvnw spring-boot:run
-```
 product-service is set to run on  : [http://localhost:8080](http://localhost:8080)
 
 You can access the contents of the MongoDB database with the tool [MongoDB Compass](https://www.mongodb.com/fr-fr/products/tools/compass)  
