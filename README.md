@@ -2,7 +2,7 @@
 This repository is an example of a microservices architecture using Spring Boot and Next.js. 
 The project is designed to demonstrate the use of various technologies and tools in a microservices environment.
 
-## Screencast demonstrations & explanations
+## Screencasts demonstrations & explanations
 
 You can see the various demos and explanations of the project as it progresses by visiting the branches in question and clicking on the video links below : 
 - [1-demo-product-service](https://youtu.be/937Yzy4TM2A)
@@ -84,6 +84,23 @@ api-gateway is set to run on  : [http://localhost:9000](http://localhost:9000)
 
 ### Access the Keycloak Admin Console
 To access the Keycloak admin console, you can access it on : [http://localhost:8181](http://localhost:8181)
+
+You can connect to the master realm with admin/admin :
+![image](https://github.com/user-attachments/assets/14bfaf88-4898-424d-a77e-f465a29f8820)
+
+If it doesn't already exist, create a new realm named `spring-microservices-security-realm`.  
+
+Go to your new realm and create a new client named `nextjs-frontend`.
+
+In the capability config section, this client must have Client authentication (On).  
+
+Standard flow, Direct access grants, Service accounts roles have to be true.  
+
+Finally, go to the Credential section of client `nextjs-frontend` and copy the client-secret.  
+
+![image](https://github.com/user-attachments/assets/b1dc006d-1ed0-4507-b160-3baa821bb61c)
+
+Copy the value to update the environment variable file (.env.local) of the nextjs-frontend.  
 
 ### Start the Product Service
 
@@ -207,6 +224,9 @@ spring.mail.port=2525
 spring.mail.username=**********
 spring.mail.password=**********
 ```
+User Interface on mailtrap.io, where you can find your credentials informations : 
+![2025-05-10 13_35_07-Mailtrap - Email Delivery Platform](https://github.com/user-attachments/assets/7268385b-c7d9-4791-832f-4afe0912d43d)
+
 
 ### Access the Grafana Dashboards
 To access the Grafana dashboards, you can access it on : [http://localhost:3000](http://localhost:3000)
